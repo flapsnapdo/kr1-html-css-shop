@@ -45,6 +45,13 @@
    =============================== */
 
 /*
+  Плавная прокрутка при переходе по якорным ссылкам.
+*/
+html {
+  scroll-behavior: smooth;
+}
+
+/*
   border-box: width включает content, padding и border.
 */
 * {
@@ -102,6 +109,15 @@ a:hover {
 a:focus-visible {
   outline: 2px solid var(--color-primary);
   outline-offset: 3px;
+}
+
+/*
+  :target — элемент, к которому перешли по якорю (например, #popular).
+  Пунктирная рамка показывает, куда именно попал пользователь.
+*/
+:target {
+  outline: 2px dashed var(--color-primary);
+  outline-offset: 4px;
 }
 
 /*
@@ -196,6 +212,30 @@ button:disabled {
 */
 .site-nav__list a:hover {
   text-decoration: underline;
+}
+
+/* --- Хлебные крошки --- */
+
+/*
+  Дополнительная навигация: показывает путь «Главная / Каталог».
+*/
+.breadcrumbs {
+  max-width: var(--container-width);
+  margin: 0 auto var(--space-md);
+  font-size: 14px;
+  color: var(--color-muted);
+}
+
+.breadcrumbs a {
+  color: var(--color-primary);
+}
+
+/*
+  Перед названием текущей страницы выводим разделитель « / ».
+*/
+.breadcrumbs span::before {
+  content: " / ";
+  color: var(--color-muted);
 }
 
 /* --- Hero и секции --- */
