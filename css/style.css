@@ -184,34 +184,42 @@ button:disabled {
 }
 
 /*
-  Убираем стандартные отступы и маркеры списка навигации.
+  Меню — flex-контейнер: пункты выстраиваются в строку.
+  flex-wrap: wrap — если пункты не помещаются, они переносятся.
+  justify-content: center — выравнивание по центру по горизонтали.
+  align-items: center — выравнивание по центру по вертикали.
+  gap — одинаковое расстояние между пунктами.
 */
 .site-nav__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-md);
   padding: 0;
   margin: var(--space-md) 0 0;
   list-style: none;
 }
 
 /*
-  Расстояние между пунктами меню.
-*/
-.site-nav__list li {
-  margin-bottom: var(--space-sm);
-}
-
-/*
   Ссылки меню.
+  inline-block позволяет задать ссылке внутренние отступы,
+  поэтому кликабельная область становится больше.
 */
 .site-nav__list a {
+  display: inline-block;
+  padding: var(--space-sm) var(--space-md);
   color: var(--color-primary);
   text-decoration: none;
+  border-radius: var(--radius-sm);
 }
 
 /*
-  При наведении подчёркиваем ссылку меню.
+  При наведении ссылка «заливается» основным цветом.
 */
 .site-nav__list a:hover {
-  text-decoration: underline;
+  color: var(--color-white);
+  background-color: var(--color-primary);
 }
 
 /* --- Хлебные крошки --- */
@@ -266,10 +274,27 @@ button:disabled {
 /* --- Карточки товаров --- */
 
 /*
+  Сетка карточек товаров.
+  repeat(3, 1fr) — три колонки одинаковой ширины.
+  gap — расстояние между карточками и по горизонтали, и по вертикали.
+*/
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+}
+
+/*
   Карточка товара — самостоятельный блок.
+  Внутри неё Flexbox в колонку: заголовок, описание, цена, кнопка
+  идут сверху вниз с одинаковым расстоянием gap.
+  margin-bottom: 0 — отступы между карточками теперь задаёт gap сетки.
 */
 .product-card {
-  margin-bottom: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  margin-bottom: 0;
   padding: var(--space-md);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
@@ -285,6 +310,97 @@ button:disabled {
 
 .product-card h3 {
   margin-top: 0;
+}
+
+/*
+  margin-top: auto прижимает кнопку к низу карточки,
+  поэтому кнопки во всех карточках стоят на одной линии.
+  align-self: flex-start — кнопка не растягивается на всю ширину.
+*/
+.product-card .button {
+  margin-top: auto;
+  align-self: flex-start;
+}
+
+/* --- Страница каталога: фильтры + товары --- */
+
+/*
+  Сетка страницы каталога из двух колонок:
+  260px под фильтры и 1fr (всё остальное место) под товары.
+  grid-template-areas даёт колонкам имена filters и products.
+*/
+.catalog-layout {
+  max-width: var(--container-width);
+  margin: 0 auto var(--space-xl);
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  grid-template-areas: "filters products";
+  gap: var(--space-lg);
+}
+
+/*
+  Боковой блок фильтров ставим в область filters.
+*/
+.catalog-filters {
+  grid-area: filters;
+  padding: var(--space-md);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface);
+}
+
+/*
+  Список товаров ставим в область products.
+*/
+.catalog-products {
+  grid-area: products;
+}
+
+/*
+  Убираем лишний верхний отступ у заголовков колонок каталога,
+  чтобы «Фильтры» и «Список товаров» стояли на одной высоте.
+*/
+.catalog-filters h2,
+.catalog-products h2 {
+  margin-top: 0;
+}
+
+/*
+  Форма фильтров: группы полей друг под другом с расстоянием gap.
+*/
+.filters-form {
+  display: grid;
+  gap: var(--space-md);
+}
+
+/*
+  fieldset — рамка вокруг группы связанных полей.
+*/
+.filters-form fieldset {
+  margin: 0;
+  padding: var(--space-md);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+}
+
+/*
+  legend — заголовок группы полей.
+*/
+.filters-form legend {
+  font-weight: 700;
+}
+
+.filters-form label {
+  display: block;
+  margin-bottom: var(--space-sm);
+}
+
+.filters-form input[type="number"] {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font: inherit;
 }
 
 /* --- Дополнительный блок --- */
