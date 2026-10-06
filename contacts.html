@@ -3,62 +3,130 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Контактная информация учебного интернет-магазина.">
-  <title>Контакты — Учебный интернет-магазин</title>
+  <meta name="description" content="Адреса кофеен Coffee Street Bar, часы работы и контакты для связи.">
+  <title>Кофейни и контакты — Coffee Street Bar</title>
+  <link rel="icon" href="images/logo.png" type="image/png">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
+  <!-- Шапка: position: sticky — остаётся вверху при прокрутке -->
   <header class="site-header">
     <div class="site-header__inner">
-      <a class="site-header__logo" href="index.html">ShopProject</a>
+      <a class="site-header__logo" href="index.html">
+        <img class="site-header__logo-image" src="images/logo.png" alt="" width="48" height="48">
+        <span class="site-header__logo-text">Coffee<br>Street Bar</span>
+      </a>
 
       <nav class="site-nav" aria-label="Основная навигация">
         <ul class="site-nav__list">
           <li class="site-nav__item"><a class="site-nav__link" href="index.html">Главная</a></li>
-          <li class="site-nav__item"><a class="site-nav__link" href="catalog.html">Каталог</a></li>
-          <li class="site-nav__item"><a class="site-nav__link site-nav__link--active" href="contacts.html" aria-current="page">Контакты</a></li>
-          <li class="site-nav__item"><a class="site-nav__link" href="index.html#advantages">Преимущества</a></li>
-          <li class="site-nav__item"><a class="site-nav__link" href="index.html#popular">Популярные товары</a></li>
-          <li class="site-nav__item"><a class="site-nav__link" href="index.html#contacts">Обратная связь</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="catalog.html">Меню</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="product.html">Напиток дня</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="order.html">Предзаказ</a></li>
+          <li class="site-nav__item"><a class="site-nav__link site-nav__link--active" href="contacts.html" aria-current="page">Кофейни</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
   <main>
-    <!-- Хлебные крошки: путь от главной до текущей страницы -->
+    <!-- Хлебные крошки -->
     <nav class="breadcrumbs" aria-label="Хлебные крошки">
-      <a class="breadcrumbs__link" href="index.html">Главная</a>
-      <span class="breadcrumbs__current">Контакты</span>
+      <ol class="breadcrumbs__list">
+        <li class="breadcrumbs__item"><a class="breadcrumbs__link" href="index.html">Главная</a></li>
+        <li class="breadcrumbs__item"><span class="breadcrumbs__current" aria-current="page">Кофейни</span></li>
+      </ol>
     </nav>
 
     <section class="section">
-      <h1 class="section__title">Контакты</h1>
-      <p class="section__text">
-        Здесь размещается контактная информация учебного интернет-магазина.
-      </p>
-      <ul class="contact-list">
-        <li class="contact-list__item">Телефон: +7 (900) 000-00-00</li>
-        <li class="contact-list__item">E-mail: info@example.com</li>
-        <li class="contact-list__item">Адрес: г. Москва, учебный проект</li>
+      <h1 class="section__title">Наши кофейни</h1>
+      <p class="section__text">Приходите за кофе или заберите предзаказ без очереди.</p>
+
+      <ul class="shop-list">
+        <li class="shop-list__item">
+          <span class="shop-list__icon" aria-hidden="true">📍</span>
+          <div>
+            <h3 class="shop-list__address">Москва, Арбат, 12</h3>
+            <p class="shop-list__hours">Ежедневно 09:00–23:00</p>
+            <a class="shop-list__link" href="https://yandex.ru/maps/?text=Coffee%20Street%20Bar%20%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0%2C%20%D0%90%D1%80%D0%B1%D0%B0%D1%82%2C%2012" target="_blank" rel="noopener">Открыть на карте</a>
+          </div>
+        </li>
+        <li class="shop-list__item">
+          <span class="shop-list__icon" aria-hidden="true">📍</span>
+          <div>
+            <h3 class="shop-list__address">Махачкала, улица Имама Шамиля 13В</h3>
+            <p class="shop-list__hours">Ежедневно 08:00–22:00</p>
+            <a class="shop-list__link" href="https://yandex.ru/maps/?text=Coffee%20Street%20Bar%20%D0%9C%D0%B0%D1%85%D0%B0%D1%87%D0%BA%D0%B0%D0%BB%D0%B0%2C%20%D1%83%D0%BB%D0%B8%D1%86%D0%B0%20%D0%98%D0%BC%D0%B0%D0%BC%D0%B0%20%D0%A8%D0%B0%D0%BC%D0%B8%D0%BB%D1%8F%2013%D0%92" target="_blank" rel="noopener">Открыть на карте</a>
+          </div>
+        </li>
       </ul>
     </section>
 
+    <section class="section">
+      <table class="spec-table">
+        <caption class="spec-table__caption">Часы работы</caption>
+        <thead>
+          <tr>
+            <th class="spec-table__head" scope="col">Кофейня</th>
+            <th class="spec-table__head" scope="col">Дни</th>
+            <th class="spec-table__head" scope="col">Время</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="spec-table__row">
+            <th class="spec-table__row-head" scope="row">Москва, Арбат</th>
+            <td class="spec-table__cell">Ежедневно</td>
+            <td class="spec-table__cell">09:00–23:00</td>
+          </tr>
+          <tr class="spec-table__row">
+            <th class="spec-table__row-head" scope="row">Махачкала, Имама Шамиля</th>
+            <td class="spec-table__cell">Ежедневно</td>
+            <td class="spec-table__cell">08:00–22:00</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
     <section class="section" id="feedback">
-      <h2 class="section__title">Обратная связь</h2>
-      <p class="section__text">
-        Чтобы отправить заявку, выберите товар на главной странице и нажмите «Заказать» — откроется форма.
-      </p>
-      <a class="button button--primary" href="index.html#popular">Перейти к форме</a>
+      <h2 class="section__title">Связаться с нами</h2>
+      <ul class="contact-list">
+        <li class="contact-list__item">
+          <span class="contact-list__label">Телефон</span>
+          <a href="tel:+79990000000">+7 (999) 000-00-00</a>
+        </li>
+        <li class="contact-list__item">
+          <span class="contact-list__label">E-mail</span>
+          <a href="mailto:example@mail.com">example@mail.com</a>
+        </li>
+      </ul>
+      <a class="button button--primary" href="order.html">Сделать предзаказ</a>
     </section>
   </main>
 
   <!-- Подвал сайта -->
   <footer class="site-footer">
-    <p class="site-footer__text">&copy; 2026 Учебный проект. Все права защищены.</p>
-    <p class="site-footer__text">Дисциплина: Фронтенд и бэкенд разработка</p>
+    <div class="site-footer__inner">
+      <div class="site-footer__about">
+        <p class="site-footer__brand">Coffee Street Bar</p>
+        <p class="site-footer__text">Кофе, чай, лимонады и свежая выпечка — каждый день.</p>
+      </div>
+
+      <nav class="site-footer__nav" aria-label="Разделы главной страницы">
+        <a class="site-footer__link" href="index.html#promos">Акции</a>
+        <a class="site-footer__link" href="index.html#popular">Популярное</a>
+        <a class="site-footer__link" href="index.html#loyalty">Бонусы</a>
+        <a class="site-footer__link" href="index.html#faq">Вопросы</a>
+      </nav>
+
+      <p class="site-footer__copy">
+        &copy; 2026 Coffee Street Bar — учебный проект. Дисциплина: Фронтенд и бэкенд разработка.
+      </p>
+    </div>
   </footer>
+
+  <!-- Кнопка «Наверх»: position: fixed — всегда в правом нижнем углу -->
+  <a class="to-top" href="#" aria-label="Вернуться в начало страницы">↑</a>
 
 </body>
 </html>
