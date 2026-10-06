@@ -1207,3 +1207,8 @@ a:focus-visible {
   background-color: var(--color-success-bg);
   border-radius: var(--radius-sm);
 }
+.product-card__image,
+.product-page__image {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
