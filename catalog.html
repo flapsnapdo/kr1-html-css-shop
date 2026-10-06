@@ -3,73 +3,81 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Каталог товаров учебного интернет-магазина.">
-  <title>Каталог товаров — Учебный интернет-магазин</title>
+  <meta name="description" content="Меню кофейни Coffee Street Bar: кофе, чай, лимонады, десерты и выпечка с ценами.">
+  <title>Меню — Coffee Street Bar</title>
+  <link rel="icon" href="images/logo.png" type="image/png">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
+  <!-- Шапка: position: sticky — остаётся вверху при прокрутке -->
   <header class="site-header">
     <div class="site-header__inner">
-      <a class="site-header__logo" href="index.html">ShopProject</a>
+      <a class="site-header__logo" href="index.html">
+        <img class="site-header__logo-image" src="images/logo.png" alt="" width="48" height="48">
+        <span class="site-header__logo-text">Coffee<br>Street Bar</span>
+      </a>
 
       <nav class="site-nav" aria-label="Основная навигация">
         <ul class="site-nav__list">
           <li class="site-nav__item"><a class="site-nav__link" href="index.html">Главная</a></li>
-          <li class="site-nav__item"><a class="site-nav__link site-nav__link--active" href="catalog.html" aria-current="page">Каталог</a></li>
-          <li class="site-nav__item"><a class="site-nav__link" href="contacts.html">Контакты</a></li>
-          <li class="site-nav__item"><a class="site-nav__link" href="index.html#advantages">Преимущества</a></li>
-          <li class="site-nav__item"><a class="site-nav__link" href="index.html#popular">Популярные товары</a></li>
-          <li class="site-nav__item"><a class="site-nav__link" href="index.html#contacts">Обратная связь</a></li>
+          <li class="site-nav__item"><a class="site-nav__link site-nav__link--active" href="catalog.html" aria-current="page">Меню</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="product.html">Напиток дня</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="order.html">Предзаказ</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="contacts.html">Кофейни</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
   <main>
-    <!-- Хлебные крошки: путь от главной до текущей страницы -->
+    <!-- Хлебные крошки -->
     <nav class="breadcrumbs" aria-label="Хлебные крошки">
-      <a class="breadcrumbs__link" href="index.html">Главная</a>
-      <span class="breadcrumbs__current">Каталог</span>
+      <ol class="breadcrumbs__list">
+        <li class="breadcrumbs__item"><a class="breadcrumbs__link" href="index.html">Главная</a></li>
+        <li class="breadcrumbs__item"><span class="breadcrumbs__current" aria-current="page">Меню</span></li>
+      </ol>
     </nav>
 
     <section class="section">
-      <h1 class="section__title">Каталог товаров</h1>
+      <h1 class="section__title">Меню</h1>
       <p class="section__text">
-        На этой странице представлен учебный каталог товаров.
-        В дальнейшем здесь будут добавлены фильтры, сортировка и более
-        подробные карточки.
+        Цены указаны за минимальный размер. Размер и молоко можно выбрать при предзаказе.
       </p>
     </section>
 
-    <!-- Сетка страницы каталога: фильтры слева, товары справа -->
+    <!-- Сетка страницы меню: фильтры слева, товары справа -->
     <section class="catalog-layout">
+      <!-- position: sticky — фильтры остаются на экране при прокрутке -->
       <aside class="catalog-filters">
         <h2 class="catalog-filters__title">Фильтры</h2>
 
         <form class="filters-form" action="#" method="get">
           <fieldset class="filters-form__group">
             <legend class="filters-form__legend">Категория</legend>
-            <label class="filters-form__label">
-              <input type="checkbox" name="category" value="all">
-              Все товары
-            </label>
-            <label class="filters-form__label">
-              <input type="checkbox" name="category" value="popular">
-              Популярные
-            </label>
-            <label class="filters-form__label">
-              <input type="checkbox" name="category" value="new">
-              Новинки
-            </label>
+            <!-- Чекбоксы оформлены «таблетками», как категории в приложении -->
+            <div class="filters-form__chips">
+              <label class="filters-form__chip" for="cat-coffee"><input class="filters-form__chip-input" id="cat-coffee" type="checkbox" name="category" value="coffee" checked> Кофе</label>
+              <label class="filters-form__chip" for="cat-tea"><input class="filters-form__chip-input" id="cat-tea" type="checkbox" name="category" value="tea"> Чай</label>
+              <label class="filters-form__chip" for="cat-lemonade"><input class="filters-form__chip-input" id="cat-lemonade" type="checkbox" name="category" value="lemonade"> Лимонады</label>
+              <label class="filters-form__chip" for="cat-dessert"><input class="filters-form__chip-input" id="cat-dessert" type="checkbox" name="category" value="dessert"> Десерты</label>
+              <label class="filters-form__chip" for="cat-bakery"><input class="filters-form__chip-input" id="cat-bakery" type="checkbox" name="category" value="bakery"> Выпечка</label>
+            </div>
           </fieldset>
 
           <fieldset class="filters-form__group">
-            <legend class="filters-form__legend">Цена</legend>
+            <legend class="filters-form__legend">Размер</legend>
+            <label class="filters-form__label" for="filter-size-s"><input id="filter-size-s" type="radio" name="size" value="S"> S — 300 мл</label>
+            <label class="filters-form__label" for="filter-size-m"><input id="filter-size-m" type="radio" name="size" value="M"> M — 400 мл</label>
+            <label class="filters-form__label" for="filter-size-l"><input id="filter-size-l" type="radio" name="size" value="L"> L — 600 мл</label>
+          </fieldset>
+
+          <fieldset class="filters-form__group">
+            <legend class="filters-form__legend">Цена, ₽</legend>
             <label class="filters-form__label" for="price-from">От</label>
-            <input class="filters-form__input" id="price-from" name="price-from" type="number" min="0" placeholder="0">
+            <input class="filters-form__input" id="price-from" name="price-from" type="number" min="0" placeholder="100">
             <label class="filters-form__label" for="price-to">До</label>
-            <input class="filters-form__input" id="price-to" name="price-to" type="number" min="0" placeholder="5000">
+            <input class="filters-form__input" id="price-to" name="price-to" type="number" min="0" placeholder="300">
           </fieldset>
 
           <button class="button button--primary" type="submit">Применить</button>
@@ -77,28 +85,80 @@
       </aside>
 
       <section class="catalog-products">
-        <h2 class="catalog-products__title">Список товаров</h2>
+        <h2 class="catalog-products__title">Все позиции</h2>
 
         <div class="products-grid">
-          <article class="product-card">
-            <h3 class="product-card__title">Товар 1</h3>
-            <p class="product-card__description">Краткое описание учебного товара.</p>
-            <p class="product-card__price">Цена: 1000 руб.</p>
-            <a class="button button--primary product-card__button" href="index.html#popular">Подробнее</a>
+          <article class="product-card product-card--featured">
+            <span class="product-card__badge product-card__badge--hit">Хит</span>
+            <img class="product-card__image" src="images/cappuccino.svg" alt="Капучино" width="320" height="240">
+            <p class="product-card__category">Кофе</p>
+            <h3 class="product-card__title">Капучино</h3>
+            <p class="product-card__description">Классический кофе с молочной пенкой.</p>
+            <p class="product-card__meta">Размеры: S · M · L</p>
+            <p class="product-card__price">от 150 ₽</p>
+            <a class="button button--secondary product-card__button" href="product.html">Подробнее</a>
           </article>
 
           <article class="product-card">
-            <h3 class="product-card__title">Товар 2</h3>
-            <p class="product-card__description">Краткое описание учебного товара.</p>
-            <p class="product-card__price">Цена: 1500 руб.</p>
-            <a class="button button--primary product-card__button" href="index.html#popular">Подробнее</a>
+            <img class="product-card__image" src="images/latte.svg" alt="Латте" width="320" height="240">
+            <p class="product-card__category">Кофе</p>
+            <h3 class="product-card__title">Латте</h3>
+            <p class="product-card__description">Мягкий кофейный напиток с большим количеством молока.</p>
+            <p class="product-card__meta">Размеры: S · M · L</p>
+            <p class="product-card__price">от 170 ₽</p>
+            <a class="button button--secondary product-card__button" href="product.html">Подробнее</a>
+          </article>
+
+          <article class="product-card">
+            <img class="product-card__image" src="images/americano.svg" alt="Американо" width="320" height="240">
+            <p class="product-card__category">Кофе</p>
+            <h3 class="product-card__title">Американо</h3>
+            <p class="product-card__description">Крепкий чёрный кофе без молока.</p>
+            <p class="product-card__meta">Размеры: S · M</p>
+            <p class="product-card__price">от 130 ₽</p>
+            <a class="button button--secondary product-card__button" href="product.html">Подробнее</a>
+          </article>
+
+          <article class="product-card">
+            <span class="product-card__badge product-card__badge--new">Новинка</span>
+            <img class="product-card__image" src="images/matcha.svg" alt="Матча латте" width="320" height="240">
+            <p class="product-card__category">Чай</p>
+            <h3 class="product-card__title">Матча латте</h3>
+            <p class="product-card__description">Нежный напиток на основе японского чая матча и молока.</p>
+            <p class="product-card__meta">Размеры: S · M</p>
+            <p class="product-card__price">от 210 ₽</p>
+            <a class="button button--secondary product-card__button" href="product.html">Подробнее</a>
+          </article>
+
+          <article class="product-card">
+            <img class="product-card__image" src="images/lemonade.svg" alt="Лимонад клубничный" width="320" height="240">
+            <p class="product-card__category">Лимонады</p>
+            <h3 class="product-card__title">Лимонад клубничный</h3>
+            <p class="product-card__description">Освежающий лимонад с клубничным вкусом.</p>
+            <p class="product-card__meta">Размеры: M · L</p>
+            <p class="product-card__price">от 190 ₽</p>
+            <a class="button button--secondary product-card__button" href="product.html">Подробнее</a>
+          </article>
+
+          <article class="product-card">
+            <img class="product-card__image" src="images/croissant.svg" alt="Круассан" width="320" height="240">
+            <p class="product-card__category">Выпечка</p>
+            <h3 class="product-card__title">Круассан</h3>
+            <p class="product-card__description">Свежий классический круассан.</p>
+            <p class="product-card__meta">Штучный товар</p>
+            <p class="product-card__price">120 ₽</p>
+            <a class="button button--secondary product-card__button" href="product.html">Подробнее</a>
           </article>
 
           <article class="product-card product-card--discount">
-            <h3 class="product-card__title">Товар 3</h3>
-            <p class="product-card__description">Краткое описание учебного товара.</p>
-            <p class="product-card__price">Цена: 1200 руб.</p>
-            <a class="button button--primary product-card__button" href="index.html#popular">Подробнее</a>
+            <span class="product-card__badge product-card__badge--sale">Скидка</span>
+            <img class="product-card__image" src="images/cheesecake.svg" alt="Чизкейк" width="320" height="240">
+            <p class="product-card__category">Десерты</p>
+            <h3 class="product-card__title">Чизкейк</h3>
+            <p class="product-card__description">Нежный десерт с сырным кремом.</p>
+            <p class="product-card__meta">Штучный товар</p>
+            <p class="product-card__price"><s class="product-card__old-price">270 ₽</s> 230 ₽</p>
+            <a class="button button--secondary product-card__button" href="product.html">Подробнее</a>
           </article>
         </div>
       </section>
@@ -107,9 +167,27 @@
 
   <!-- Подвал сайта -->
   <footer class="site-footer">
-    <p class="site-footer__text">&copy; 2026 Учебный проект. Все права защищены.</p>
-    <p class="site-footer__text">Дисциплина: Фронтенд и бэкенд разработка</p>
+    <div class="site-footer__inner">
+      <div class="site-footer__about">
+        <p class="site-footer__brand">Coffee Street Bar</p>
+        <p class="site-footer__text">Кофе, чай, лимонады и свежая выпечка — каждый день.</p>
+      </div>
+
+      <nav class="site-footer__nav" aria-label="Разделы главной страницы">
+        <a class="site-footer__link" href="index.html#promos">Акции</a>
+        <a class="site-footer__link" href="index.html#popular">Популярное</a>
+        <a class="site-footer__link" href="index.html#loyalty">Бонусы</a>
+        <a class="site-footer__link" href="index.html#faq">Вопросы</a>
+      </nav>
+
+      <p class="site-footer__copy">
+        &copy; 2026 Coffee Street Bar — учебный проект. Дисциплина: Фронтенд и бэкенд разработка.
+      </p>
+    </div>
   </footer>
+
+  <!-- Кнопка «Наверх»: position: fixed — всегда в правом нижнем углу -->
+  <a class="to-top" href="#" aria-label="Вернуться в начало страницы">↑</a>
 
 </body>
 </html>

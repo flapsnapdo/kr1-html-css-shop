@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240" width="320" height="240" role="img" aria-label="Чизкейк">
+  <rect width="320" height="240" fill="#1a1a1a"/>
+  <circle cx="160" cy="120" r="88" fill="#f5c738" fill-opacity="0.15"/>
+  <g fill="#f5c738" stroke="#f5c738" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M96 168 L224 168 L224 132 L96 104 Z" stroke="none"/>
+    <path d="M96 104 L224 132" fill="none" stroke="#1a1a1a" stroke-width="5"/>
+    <circle cx="196" cy="110" r="12" stroke="none"/>
+    <path d="M96 150 L224 150" fill="none" stroke="#1a1a1a" stroke-width="3" stroke-dasharray="8 6"/>
+  </g>
+</svg>

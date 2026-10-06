@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240" width="320" height="240" role="img" aria-label="Матча латте">
+  <rect width="320" height="240" fill="#1a1a1a"/>
+  <circle cx="160" cy="120" r="88" fill="#f5c738" fill-opacity="0.15"/>
+  <g fill="#f5c738" stroke="#f5c738" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M108 178 C 100 110 150 64 222 60 C 222 132 180 182 108 178 Z" stroke="none"/>
+    <path d="M114 172 C 140 140 170 112 206 78" fill="none" stroke="#1a1a1a" stroke-width="5"/>
+  </g>
+</svg>

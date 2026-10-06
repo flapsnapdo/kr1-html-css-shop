@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Капучино в Coffee Street Bar: размеры S, M, L, цены, состав и дополнительные опции.">
+  <title>Капучино — Coffee Street Bar</title>
+  <link rel="icon" href="images/logo.png" type="image/png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Шапка: position: sticky — остаётся вверху при прокрутке -->
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-header__logo" href="index.html">
+        <img class="site-header__logo-image" src="images/logo.png" alt="" width="48" height="48">
+        <span class="site-header__logo-text">Coffee<br>Street Bar</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Основная навигация">
+        <ul class="site-nav__list">
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html">Главная</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="catalog.html">Меню</a></li>
+          <li class="site-nav__item"><a class="site-nav__link site-nav__link--active" href="product.html" aria-current="page">Напиток дня</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="order.html">Предзаказ</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="contacts.html">Кофейни</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Хлебные крошки -->
+    <nav class="breadcrumbs" aria-label="Хлебные крошки">
+      <ol class="breadcrumbs__list">
+        <li class="breadcrumbs__item"><a class="breadcrumbs__link" href="index.html">Главная</a></li>
+        <li class="breadcrumbs__item"><a class="breadcrumbs__link" href="catalog.html">Меню</a></li>
+        <li class="breadcrumbs__item"><span class="breadcrumbs__current" aria-current="page">Капучино</span></li>
+      </ol>
+    </nav>
+
+    <!-- Карточка товара: Grid из двух колонок — картинка и информация -->
+    <article class="product-page">
+      <div class="product-page__media">
+        <span class="product-card__badge product-card__badge--hit">Хит</span>
+        <img class="product-page__image" src="images/cappuccino.svg" alt="Капучино" width="320" height="240">
+      </div>
+
+      <div class="product-page__info">
+        <p class="product-page__label">Напиток дня</p>
+        <h1 class="product-page__title">Капучино</h1>
+        <p class="product-page__description">
+          Классический кофе с молочной пенкой: двойной эспрессо и взбитое молоко
+          с плотной шелковистой пеной. Самый популярный напиток наших гостей.
+        </p>
+
+        <!-- Выбор размера: radio-кнопки оформлены как в приложении -->
+        <fieldset class="size-picker">
+          <legend class="size-picker__legend">Выбери размер</legend>
+          <label class="size-picker__option" for="pick-size-s">
+            <input class="size-picker__input" id="pick-size-s" type="radio" name="size" value="S" checked>
+            <span class="size-picker__name">S</span>
+            <span class="size-picker__volume">300 мл</span>
+          </label>
+          <label class="size-picker__option" for="pick-size-m">
+            <input class="size-picker__input" id="pick-size-m" type="radio" name="size" value="M">
+            <span class="size-picker__name">M</span>
+            <span class="size-picker__volume">400 мл</span>
+          </label>
+          <label class="size-picker__option" for="pick-size-l">
+            <input class="size-picker__input" id="pick-size-l" type="radio" name="size" value="L">
+            <span class="size-picker__name">L</span>
+            <span class="size-picker__volume">600 мл</span>
+          </label>
+        </fieldset>
+
+        <p class="product-page__price">от 150 ₽</p>
+        <div class="product-page__actions">
+          <a class="button button--primary" href="order.html">Сделать предзаказ</a>
+          <a class="button button--secondary" href="catalog.html">Всё меню</a>
+        </div>
+        <p class="product-page__notice">Онлайн-оплата пока недоступна — оплатить заказ можно в кофейне.</p>
+      </div>
+    </article>
+
+    <!-- Таблица: сравнение размеров -->
+    <section class="section">
+      <table class="spec-table">
+        <caption class="spec-table__caption">Размеры и цены</caption>
+        <thead>
+          <tr>
+            <th class="spec-table__head" scope="col">Размер</th>
+            <th class="spec-table__head" scope="col">Объём</th>
+            <th class="spec-table__head" scope="col">Эспрессо</th>
+            <th class="spec-table__head" scope="col">Цена</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="spec-table__row">
+            <th class="spec-table__row-head" scope="row">S</th>
+            <td class="spec-table__cell">300 мл</td>
+            <td class="spec-table__cell">1 порция</td>
+            <td class="spec-table__cell">150 ₽</td>
+          </tr>
+          <tr class="spec-table__row">
+            <th class="spec-table__row-head" scope="row">M</th>
+            <td class="spec-table__cell">400 мл</td>
+            <td class="spec-table__cell">2 порции</td>
+            <td class="spec-table__cell">190 ₽</td>
+          </tr>
+          <tr class="spec-table__row">
+            <th class="spec-table__row-head" scope="row">L</th>
+            <td class="spec-table__cell">600 мл</td>
+            <td class="spec-table__cell">2 порции</td>
+            <td class="spec-table__cell">230 ₽</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Таблица: состав и опции -->
+    <section class="section">
+      <table class="spec-table">
+        <caption class="spec-table__caption">Состав и дополнительные опции</caption>
+        <thead>
+          <tr>
+            <th class="spec-table__head" scope="col">Параметр</th>
+            <th class="spec-table__head" scope="col">Значение</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="spec-table__row">
+            <th class="spec-table__row-head" scope="row">Состав</th>
+            <td class="spec-table__cell">Эспрессо, молоко, молочная пена</td>
+          </tr>
+          <tr class="spec-table__row">
+            <th class="spec-table__row-head" scope="row">Альтернативное молоко</th>
+            <td class="spec-table__cell">Овсяное, миндальное, безлактозное — +40 ₽</td>
+          </tr>
+          <tr class="spec-table__row">
+            <th class="spec-table__row-head" scope="row">Сиропы</th>
+            <td class="spec-table__cell">Карамель, ваниль, лесной орех — +30 ₽</td>
+          </tr>
+          <tr class="spec-table__row">
+            <th class="spec-table__row-head" scope="row">Дополнительный шот</th>
+            <td class="spec-table__cell">+50 ₽</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <!-- Подвал сайта -->
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <div class="site-footer__about">
+        <p class="site-footer__brand">Coffee Street Bar</p>
+        <p class="site-footer__text">Кофе, чай, лимонады и свежая выпечка — каждый день.</p>
+      </div>
+
+      <nav class="site-footer__nav" aria-label="Разделы главной страницы">
+        <a class="site-footer__link" href="index.html#promos">Акции</a>
+        <a class="site-footer__link" href="index.html#popular">Популярное</a>
+        <a class="site-footer__link" href="index.html#loyalty">Бонусы</a>
+        <a class="site-footer__link" href="index.html#faq">Вопросы</a>
+      </nav>
+
+      <p class="site-footer__copy">
+        &copy; 2026 Coffee Street Bar — учебный проект. Дисциплина: Фронтенд и бэкенд разработка.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Кнопка «Наверх»: position: fixed — всегда в правом нижнем углу -->
+  <a class="to-top" href="#" aria-label="Вернуться в начало страницы">↑</a>
+
+</body>
+</html>

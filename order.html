@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Предзаказ в Coffee Street Bar: выберите напиток, размер, кофейню и время — заберёте без очереди.">
+  <title>Предзаказ — Coffee Street Bar</title>
+  <link rel="icon" href="images/logo.png" type="image/png">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+
+  <!-- Шапка: position: sticky — остаётся вверху при прокрутке -->
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-header__logo" href="index.html">
+        <img class="site-header__logo-image" src="images/logo.png" alt="" width="48" height="48">
+        <span class="site-header__logo-text">Coffee<br>Street Bar</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Основная навигация">
+        <ul class="site-nav__list">
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html">Главная</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="catalog.html">Меню</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="product.html">Напиток дня</a></li>
+          <li class="site-nav__item"><a class="site-nav__link site-nav__link--active" href="order.html" aria-current="page">Предзаказ</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="contacts.html">Кофейни</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Хлебные крошки -->
+    <nav class="breadcrumbs" aria-label="Хлебные крошки">
+      <ol class="breadcrumbs__list">
+        <li class="breadcrumbs__item"><a class="breadcrumbs__link" href="index.html">Главная</a></li>
+        <li class="breadcrumbs__item"><span class="breadcrumbs__current" aria-current="page">Предзаказ</span></li>
+      </ol>
+    </nav>
+
+    <section class="section order-page">
+      <h1 class="section__title">Предзаказ</h1>
+      <p class="section__text">
+        Выберите напиток и время — бариста приготовит заказ к вашему приходу. Оплата в кофейне.
+      </p>
+
+      <form class="order-form order-form--page" id="order-page-form" action="#" method="post" novalidate>
+        <fieldset class="order-form__group">
+          <legend class="order-form__legend">Заказ</legend>
+
+          <div class="order-form__field">
+            <label class="order-form__label" for="page-product">Позиция из меню</label>
+            <select class="order-form__select" id="page-product" name="product" required>
+              <option value="">Выберите позицию</option>
+                <option value="cappuccino">Капучино</option>
+                <option value="latte">Латте</option>
+                <option value="americano">Американо</option>
+                <option value="matcha">Матча латте</option>
+                <option value="lemonade">Лимонад клубничный</option>
+                <option value="croissant">Круассан</option>
+                <option value="cheesecake">Чизкейк</option>
+            </select>
+          </div>
+
+          <div class="order-form__row">
+            <div class="order-form__field">
+              <label class="order-form__label" for="page-size">Размер</label>
+              <select class="order-form__select" id="page-size" name="size">
+                <option value="S">S — 300 мл</option>
+                <option value="M">M — 400 мл</option>
+                <option value="L">L — 600 мл</option>
+              </select>
+            </div>
+
+            <div class="order-form__field">
+              <label class="order-form__label" for="page-milk">Молоко</label>
+              <select class="order-form__select" id="page-milk" name="milk">
+                <option value="regular">Обычное</option>
+                <option value="oat">Овсяное (+40 ₽)</option>
+                <option value="almond">Миндальное (+40 ₽)</option>
+                <option value="lactose-free">Безлактозное (+40 ₽)</option>
+              </select>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="order-form__group">
+          <legend class="order-form__legend">Где и когда</legend>
+
+          <div class="order-form__field">
+            <label class="order-form__label" for="page-shop">Кофейня</label>
+            <select class="order-form__select" id="page-shop" name="shop" required>
+              <option value="">Выберите кофейню</option>
+                <option value="arbat">Москва, Арбат, 12</option>
+                <option value="shamil">Махачкала, улица Имама Шамиля 13В</option>
+            </select>
+          </div>
+
+          <div class="order-form__row">
+            <div class="order-form__field">
+              <label class="order-form__label" for="page-date">Дата</label>
+              <input class="order-form__input" id="page-date" name="date" type="date" required>
+            </div>
+
+            <div class="order-form__field">
+              <label class="order-form__label" for="page-time">Время</label>
+              <input class="order-form__input" id="page-time" name="time" type="time" min="08:00" max="22:30" required>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="order-form__group">
+          <legend class="order-form__legend">Контакты</legend>
+
+          <div class="order-form__field">
+            <label class="order-form__label" for="page-name">Имя</label>
+            <input class="order-form__input" id="page-name" name="name" type="text"
+              placeholder="Введите ваше имя" minlength="2" autocomplete="given-name" required>
+          </div>
+
+          <div class="order-form__row">
+            <div class="order-form__field">
+              <label class="order-form__label" for="page-email">E-mail</label>
+              <input class="order-form__input" id="page-email" name="email" type="email"
+                placeholder="example@mail.ru" autocomplete="email" required>
+            </div>
+
+            <div class="order-form__field">
+              <label class="order-form__label" for="page-phone">Телефон</label>
+              <input class="order-form__input" id="page-phone" name="phone" type="tel" inputmode="tel"
+                placeholder="+7 (900) 000-00-00" pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$" required>
+              <small class="order-form__hint">Формат: +7 (900) 000-00-00</small>
+            </div>
+          </div>
+
+          <div class="order-form__field">
+            <label class="order-form__label" for="page-comment">Комментарий</label>
+            <textarea class="order-form__textarea" id="page-comment" name="comment" rows="3"
+              placeholder="Например, без сахара или с сиропом"></textarea>
+          </div>
+        </fieldset>
+
+        <div class="order-form__field">
+          <label class="order-form__checkbox-label" for="page-agreement">
+            <input class="order-form__checkbox" id="page-agreement" name="agreement" type="checkbox" required>
+            Я согласен на обработку данных
+          </label>
+        </div>
+
+        <div class="order-form__actions">
+          <button class="button button--primary" type="submit">Отправить заказ</button>
+          <button class="button button--secondary" type="reset">Очистить</button>
+        </div>
+      </form>
+
+      <p class="success-message" id="order-page-success" role="status" hidden>
+        Заказ принят! Ждём вас в кофейне к выбранному времени.
+      </p>
+    </section>
+  </main>
+
+  <!-- Подвал сайта -->
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <div class="site-footer__about">
+        <p class="site-footer__brand">Coffee Street Bar</p>
+        <p class="site-footer__text">Кофе, чай, лимонады и свежая выпечка — каждый день.</p>
+      </div>
+
+      <nav class="site-footer__nav" aria-label="Разделы главной страницы">
+        <a class="site-footer__link" href="index.html#promos">Акции</a>
+        <a class="site-footer__link" href="index.html#popular">Популярное</a>
+        <a class="site-footer__link" href="index.html#loyalty">Бонусы</a>
+        <a class="site-footer__link" href="index.html#faq">Вопросы</a>
+      </nav>
+
+      <p class="site-footer__copy">
+        &copy; 2026 Coffee Street Bar — учебный проект. Дисциплина: Фронтенд и бэкенд разработка.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Кнопка «Наверх»: position: fixed — всегда в правом нижнем углу -->
+  <a class="to-top" href="#" aria-label="Вернуться в начало страницы">↑</a>
+
+</body>
+</html>
